@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://player_animation/idle/player-idle-4.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://player_animation/crouch/player-crouch-2.png" type="Texture" id=18]
 [ext_resource path="res://player_animation/climb/player-climb-2.png" type="Texture" id=19]
 [ext_resource path="res://player_animation/climb/player-climb-1.png" type="Texture" id=20]
+[ext_resource path="res://SFX_Jump_48.wav" type="AudioStream" id=21]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 9.0
@@ -75,3 +76,10 @@ frames = SubResource( 2 )
 animation = "idle"
 frame = 3
 playing = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

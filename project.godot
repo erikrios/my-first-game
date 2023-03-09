@@ -11,8 +11,13 @@ config_version=4
 [application]
 
 config/name="Jump N Run"
-run/main_scene="res://GameLevel.tscn"
+run/main_scene="res://TitleScreen.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=800
 
 [gui]
 

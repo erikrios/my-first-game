@@ -22,7 +22,4 @@ func _physics_process(delta):
 
 
 func _on_CollisionChecker_body_entered(body):
-	print("enter enemy")
-	lives -= 1
-	if lives == 0:
-		get_tree().change_scene("res://GameLevel.tscn")
+	body.hit_enemy()
