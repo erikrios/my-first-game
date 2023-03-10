@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://props.png" type="Texture" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://CanvasLayer.gd" type="Script" id=10]
 [ext_resource path="res://MyLabelFont.tres" type="DynamicFont" id=11]
 [ext_resource path="res://health.png" type="Texture" id=12]
+[ext_resource path="res://up_button.png" type="Texture" id=13]
+[ext_resource path="res://left_button.png" type="Texture" id=14]
+[ext_resource path="res://right_button.png" type="Texture" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -672,7 +675,7 @@ points = PoolVector2Array( 16.72, 0.338669, 32, 0, 32, 1.24586, 30.7168, 1.11627
 28/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 67.5, 10 )
+extents = Vector2( 63, 10 )
 
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 41.5, 40.5 )
@@ -684,14 +687,15 @@ font_data = ExtResource( 9 )
 [node name="Game Level" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, 157 )
 scale = Vector2( 4, 4 )
 tile_set = SubResource( 26 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 2, 536870915, 0, 13, 2, 0, 131072, 536870928, 0, 131073, 536870928, 0, 131074, 536870928, 0, 131075, 536870924, 0, 393216, 536870927, 0, 393217, 536870927, 0, 393218, 536870927, 0, 393219, 536870927, 0, 393220, 536870927, 0, 393221, 536870927, 0, 393224, 536870927, 0, 393225, 536870927, 0, 393226, 536870927, 0, 393227, 536870927, 0, 393228, 536870927, 0, 393229, 536870927, 0, 393230, 536870927, 0, 393231, 536870927, 0, 458752, 536870931, 0, 458753, 536870931, 0, 458754, 536870931, 0, 458755, 536870931, 0, 458756, 536870931, 0, 458757, 536870932, 0, 458760, 536870930, 0, 458761, 536870934, 0, 458762, 536870931, 0, 458763, 536870931, 0, 458764, 536870931, 0, 458765, 536870931, 0, 458766, 536870931, 0, 458767, 536870930, 0, 524288, 536870931, 0, 524289, 536870931, 0, 524290, 536870933, 0, 524291, 536870931, 0, 524292, 536870931, 0, 524293, 536870930, 0, 524296, 536870930, 0, 524297, 536870931, 0, 524298, 536870931, 0, 524299, 536870931, 0, 524300, 536870931, 0, 524301, 536870932, 0, 524302, 536870931, 0, 524303, 536870930, 0, 589824, 536870931, 0, 589825, 536870931, 0, 589826, 536870931, 0, 589827, 536870931, 0, 589828, 536870931, 0, 589829, 536870930, 0, 589832, 536870930, 0, 589833, 536870931, 0, 589834, 536870931, 0, 589835, 536870931, 0, 589836, 536870931, 0, 589837, 536870931, 0, 589838, 536870931, 0, 589839, 536870930, 0 )
+tile_data = PoolIntArray( 2, 536870915, 0, 15, 2, 0, 131072, 536870928, 0, 131073, 536870928, 0, 131074, 536870928, 0, 131075, 536870924, 0, 393216, 536870927, 0, 393217, 536870927, 0, 393218, 536870927, 0, 393219, 536870927, 0, 393220, 536870927, 0, 393221, 536870927, 0, 393224, 536870927, 0, 393225, 536870927, 0, 393226, 536870927, 0, 393227, 536870927, 0, 393228, 536870927, 0, 393229, 536870927, 0, 393230, 536870927, 0, 393231, 536870927, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 458752, 536870931, 0, 458753, 536870931, 0, 458754, 536870931, 0, 458755, 536870931, 0, 458756, 536870931, 0, 458757, 536870932, 0, 458760, 536870930, 0, 458761, 536870934, 0, 458762, 536870931, 0, 458763, 536870931, 0, 458764, 536870931, 0, 458765, 536870931, 0, 458766, 536870931, 0, 458767, 19, 0, 458768, 19, 0, 458769, 19, 0, 458770, 19, 0, 458771, 6, 0, 524288, 536870931, 0, 524289, 536870931, 0, 524290, 536870933, 0, 524291, 536870931, 0, 524292, 536870931, 0, 524293, 536870930, 0, 524296, 536870930, 0, 524297, 536870931, 0, 524298, 536870931, 0, 524299, 536870931, 0, 524300, 536870931, 0, 524301, 536870932, 0, 524302, 536870931, 0, 524303, 19, 0, 524304, 19, 0, 524305, 19, 0, 524306, 19, 0, 524307, 6, 0, 589824, 536870931, 0, 589825, 536870931, 0, 589826, 536870931, 0, 589827, 536870931, 0, 589828, 536870931, 0, 589829, 536870930, 0, 589832, 536870930, 0, 589833, 536870931, 0, 589834, 536870931, 0, 589835, 536870931, 0, 589836, 536870931, 0, 589837, 536870931, 0, 589838, 536870931, 0, 589839, 19, 0, 589840, 19, 0, 589841, 19, 0, 589842, 19, 0, 589843, 6, 0, 655360, 19, 0, 655361, 19, 0, 655362, 19, 0, 655363, 19, 0, 655364, 19, 0, 655365, 6, 0, 655368, 6, 0, 655369, 19, 0, 655370, 19, 0, 655371, 19, 0, 655372, 19, 0, 655373, 19, 0, 655374, 19, 0, 655375, 19, 0, 655376, 19, 0, 655377, 19, 0, 655378, 19, 0, 655379, 18, 0 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 30, 350 )
+position = Vector2( 30, 507 )
 scale = Vector2( 3, 3 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
@@ -713,44 +717,44 @@ scroll_base_scale = Vector2( 0.5, 0.5 )
 motion_mirroring = Vector2( 1073, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2( 2.8, 2.8 )
+scale = Vector2( 3.34375, 3.33333 )
 texture = ExtResource( 4 )
 centered = false
 
 [node name="GoldCoin" parent="." instance=ExtResource( 5 )]
-position = Vector2( 108, 354 )
+position = Vector2( 108, 514 )
 
 [node name="GoldCoin2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 224, 100 )
+position = Vector2( 224, 258 )
 
 [node name="RedCoin" parent="." instance=ExtResource( 6 )]
-position = Vector2( 111, 98 )
+position = Vector2( 80, 258 )
 
 [node name="RedCoin2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 256, 355 )
+position = Vector2( 256, 514 )
 
 [node name="SilverCoin" parent="." instance=ExtResource( 7 )]
-position = Vector2( 612, 361 )
+position = Vector2( 612, 514 )
 
 [node name="SilverCoin2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 836, 362 )
+position = Vector2( 836, 514 )
 
 [node name="Enemy" parent="." instance=ExtResource( 8 )]
-position = Vector2( 802, 348 )
+position = Vector2( 951, 505 )
 
 [node name="Fall Area" type="Area2D" parent="."]
-position = Vector2( 391, 647 )
+position = Vector2( 390, 783 )
 collision_layer = 8
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fall Area"]
-position = Vector2( 57.5, 4 )
+position = Vector2( 58, 4 )
 shape = SubResource( 27 )
 
 [node name="FinishLevelArea" type="Area2D" parent="."]
-position = Vector2( 1002, 340 )
+position = Vector2( 1127, 497 )
 collision_layer = 16
 __meta__ = {
 "_edit_group_": true
@@ -765,28 +769,28 @@ script = ExtResource( 10 )
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 0.213
-margin_left = -2.0
-margin_top = 50.0
-margin_right = -125.112
-margin_bottom = 143.0
+margin_left = -11.0
+margin_top = 54.0
+margin_right = -134.112
+margin_bottom = 147.0
 texture = ExtResource( 12 )
 expand = true
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 0.213
-margin_left = 45.0
-margin_top = 50.0
-margin_right = -78.112
-margin_bottom = 143.0
+margin_left = 64.0
+margin_top = 53.0
+margin_right = -59.112
+margin_bottom = 146.0
 texture = ExtResource( 12 )
 expand = true
 
 [node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 0.213
-margin_left = 91.0
-margin_top = 50.0
-margin_right = -32.112
-margin_bottom = 143.0
+margin_left = 133.0
+margin_top = 55.0
+margin_right = 9.888
+margin_bottom = 148.0
 texture = ExtResource( 12 )
 expand = true
 
@@ -810,6 +814,35 @@ margin_bottom = 79.0
 custom_colors/font_color = Color( 0.0705882, 0.0235294, 0.0235294, 1 )
 custom_fonts/font = SubResource( 29 )
 text = "00"
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchor_top = 0.67375
+anchor_right = 1.0
+anchor_bottom = 0.82375
+margin_left = -9.0
+margin_top = 139.0
+margin_right = -9.0
+margin_bottom = 139.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Left" type="TouchScreenButton" parent="CanvasLayer/CenterContainer"]
+scale = Vector2( 0.05, 0.05 )
+normal = ExtResource( 14 )
+action = "left_arrow"
+
+[node name="Right" type="TouchScreenButton" parent="CanvasLayer/CenterContainer"]
+position = Vector2( 125, 0 )
+scale = Vector2( 0.05, 0.05 )
+normal = ExtResource( 15 )
+action = "right_arrow"
+
+[node name="Jump" type="TouchScreenButton" parent="CanvasLayer/CenterContainer"]
+position = Vector2( 1090, -11 )
+scale = Vector2( 0.05, 0.05 )
+normal = ExtResource( 13 )
+action = "jump"
 
 [connection signal="gold_coin_collected" from="KinematicBody2D" to="CanvasLayer" method="_on_KinematicBody2D_gold_coin_collected"]
 [connection signal="lives_count" from="KinematicBody2D" to="CanvasLayer" method="_on_KinematicBody2D_lives_count"]

@@ -23,3 +23,7 @@ func _physics_process(delta):
 
 func _on_CollisionChecker_body_entered(body):
 	body.hit_enemy()
+
+
+func _on_FireballCollisionChecker_area_entered(area):
+	queue_free()

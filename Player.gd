@@ -9,6 +9,7 @@ signal silver_coin_collected
 
 var lives: int = 3
 signal lives_count
+const Fireball = preload("res://Fireball.tscn")
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -31,6 +32,11 @@ func _physics_process(delta):
 		$AnimatedSprite.play("jump")
 		$AudioStreamPlayer.play()
 		
+	if Input.is_action_just_pressed("shoot"):
+		var fireball = Fireball.instance()
+		get_parent().add_child(fireball)
+		fireball.position = $Position2D.global_position
+		
 	velocity.y = velocity.y + gravity * (delta)
 		
 	move_and_slide(velocity, Vector2.UP)
@@ -52,7 +58,8 @@ func hit_enemy():
 	$Timer.start()
 
 func _on_Fall_Area_body_entered(body):
-	get_tree().change_scene("res://GameOver.tscn")
+	PlayerVars.lives -= 1
+	get_tree().change_scene("res://GameLevel.tscn")
 
 
 func _on_FinishLevelArea_body_entered(body):
